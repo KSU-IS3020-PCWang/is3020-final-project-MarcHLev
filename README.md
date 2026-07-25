@@ -9,23 +9,20 @@
 
 ## How to Run the Application
 
-How to Run the Application
-
-Requires Python 3.10+ (developed and tested on Python 3.13). No external packages needed — only the standard library (csv, os, datetime).
-
-Make sure data/recommendations.txt exists in the project folder.
-Open the project in VS Code (or PyCharm).
-Run vibecheck.py — e.g. python vibecheck.py from the terminal, or use the Run button.
-Follow the prompts to enter your mood and energy level.
+- Requires Python 3.10+ (developed and tested on Python 3.13). No external packages needed — only the standard library (csv, os, datetime).
+- Make sure data/recommendations.txt exists in the project folder.
+- Open the project in VS Code (or PyCharm).
+- Run vibecheck.py — e.g. python vibecheck.py from the terminal, or use the Run button.
+- Follow the prompts to enter your mood and energy level.
 
 ## Major Features
 
--Prompts the user for their current mood and energy level, with input validation and reprompting on invalid or empty entries.
--Matches the mood/energy combination against a set of curated music recommendations (genre, vibe description, and three artists).
--Handles mood/energy combinations that don't have a matching recommendation without crashing.
--Logs every completed session (timestamp, mood, energy, genre) to history.csv.
--Lets the user view their past sessions on demand.
--Supports checking multiple moods in one run via a repeat loop.
+- Prompts the user for their current mood and energy level, with input validation and reprompting on invalid or empty entries.
+- Matches the mood/energy combination against a set of curated music recommendations (genre, vibe description, and three artists).
+- Handles mood/energy combinations that don't have a matching recommendation without crashing.
+- Logs every completed session (timestamp, mood, energy, genre) to history.csv.
+- Lets the user view their past sessions on demand.
+- Supports checking multiple moods in one run via a repeat loop.
 
 ## Python Concepts Used
 
