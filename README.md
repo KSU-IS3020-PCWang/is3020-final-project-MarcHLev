@@ -40,8 +40,9 @@
 
 ## Data Files
 
--data/recommendations.txt — pipe-delimited text file, one recommendation per line, in the format: mood|energy|genre|vibe|artist1,artist2,artist3. Loaded once at startup into a nested dictionary keyed by mood, then energy.
--history.csv — created automatically the first time a session is logged. Columns: date (timestamp), mood, energy, genre. Grows by one row per completed session.
+- data/recommendations.txt — pipe-delimited text file, one recommendation per line, in the format: mood|energy|genre|vibe|artist1,artist2,artist3. Loaded once at startup into a nested dictionary keyed by mood, then energy.
+
+- history.csv — created automatically the first time a session is logged. Columns: date (timestamp), mood, energy, genre. Grows by one row per completed session.
 
 ## Testing Summary
 
