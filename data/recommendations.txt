@@ -1,0 +1,14 @@
+happy|high|Pop Punk|High energy and carefree, perfect for a good day|Paramore,Blink-182,Fall Out Boy
+happy|medium|Indie Pop|Bright and breezy, easy listening for a good mood|Tame Impala,Two Door Cinema Club,MGMT
+happy|low|Acoustic Pop|Warm and mellow, good vibes without the rush|Jack Johnson,Colbie Caillat,Jason Mraz
+sad|low|Lo-fi|Soft and reflective, something to sit with your feelings|Bon Iver,Phoebe Bridgers,Elliott Smith
+sad|medium|Alt Rock|Emotional but driving, something to work through it|The National,Radiohead,Death Cab for Cutie
+sad|high|Emo Rock|Cathartic and intense, let it out|My Chemical Romance,Taking Back Sunday,Dashboard Confessional
+focused|medium|Lo-fi Hip Hop|Steady and unobtrusive background for concentration|Nujabes,Idealism,J Dilla
+focused|high|Instrumental Electronic|Driving rhythm to power through deep work|ODESZA,Bonobo,Tycho
+energized|high|EDM|Big beats and momentum for max energy|Calvin Harris,Marshmello,Zedd
+energized|medium|Funk|Groovy and upbeat, keeps the energy moving|Vulfpeck,Jamiroquai,Bruno Mars
+anxious|low|Ambient|Calming textures to slow things down|Brian Eno,Stars of the Lid,Hammock
+anxious|medium|Chillhop|Gentle rhythm to ease restlessness|Kupla,FloFilz,Blue Wednesday
+calm|low|Acoustic Folk|Quiet and grounding, easy on the mind|Iron & Wine,Fleet Foxes,Sufjan Stevens
+calm|medium|Soft Jazz|Relaxed and smooth, background for unwinding|Norah Jones,Bill Evans,Chet Baker
