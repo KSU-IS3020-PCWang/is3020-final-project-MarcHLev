@@ -2,10 +2,10 @@
 
 ## Student and Project Information
 
-- Student name:
-- GitHub username:
-- Project title:
-- Application purpose:
+- Student name: Marc Leveille
+- GitHub username: MarcHLev
+- Project title: VibeCheck
+- Application purpose: Help people who struggle picking what to listen to when they are feeling certain moods, letting them find the perfect fit for whatever vibe they are feeling.
 
 ## How to Run the Application
 
