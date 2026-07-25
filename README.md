@@ -26,12 +26,12 @@
 
 ## Python Concepts Used
 
-Functions: the program is broken into single-purpose functions — get_mood(), get_energy(), load_recommendations(), get_recommendation(), display_recommendation(), log_session(), and show_history() — tied together by main().
-Collections: a nested dictionary structure (data[mood][energy] = {...}) is used to look up recommendations, and lists are used to store artist names and CSV rows.
-Conditionals: input validation, checking whether a mood/energy combination exists in the data, and deciding whether to log a session or continue the loop.
-Loops: while True loops handle reprompting on invalid input and let the user check multiple moods without restarting the program.
-File persistence: recommendations.txt is read once at startup; history.csv is appended to after every session and read back by show_history().
-Exception handling: try/except FileNotFoundError guards file reads in load_recommendations() and show_history() so a missing file doesn't crash the program.
+- Functions: the program is broken into single-purpose functions — get_mood(), get_energy(), load_recommendations(), get_recommendation(), display_recommendation(), log_session(), and show_history() — tied together by main().
+- Collections: a nested dictionary structure (data[mood][energy] = {...}) is used to look up recommendations, and lists are used to store artist names and CSV rows.
+- Conditionals: input validation, checking whether a mood/energy combination exists in the data, and deciding whether to log a session or continue the loop.
+- Loops: while True loops handle reprompting on invalid input and let the user check multiple moods without restarting the program.
+- File persistence: recommendations.txt is read once at startup; history.csv is appended to after every session and read back by show_history().
+- Exception handling: try/except FileNotFoundError guards file reads in load_recommendations() and show_history() so a missing file doesn't crash the program.
 
 ## Data Files
 
