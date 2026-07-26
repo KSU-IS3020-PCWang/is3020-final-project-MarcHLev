@@ -47,4 +47,4 @@ Describe the major scenarios tested, including invalid input and file-related er
 
 ## AI Use
 
-Complete `AI_USAGE.md` and summarize the most important AI-assisted improvements here.
+Claude was used only during the AI-assisted improvement pass, after the original working version was committed. It reviewed my finished code and suggested five accepted improvements (malformed-line handling, artist whitespace stripping, graceful Ctrl+C exit, and explanatory comments) and one rejected suggestion (empty-file warning). One suggestion (corrupted history row detection) had to be revised after testing showed Claude's original approach didn't actually work.

@@ -69,9 +69,16 @@ def load_recommendations(filename):
                 if not line:
                     continue
 
-                mood, energy, genre, vibe, artists_string = line.split("|")
-                artists = artists_string.split(",")
+                try:
+                    mood, energy, genre, vibe, artists_string = line.split("|")
+                except ValueError:
+                    print(f"Skipping malformed line: {line}")
+                    continue
 
+                artists = [artist.strip() for artist in artists_string.split(",")]
+
+                # First time seeing this mood — need to initialize its inner
+                # dict before we can assign an energy-level key into it.
                 if mood not in recommendations:
                     recommendations[mood] = {}
 
@@ -142,6 +149,9 @@ def log_session(mood, energy, genre, filename="history.csv"):
     file is created, then appends timestamp + mood + energy + genre
     on every call.
     """
+    # This check has to happen BEFORE opening the file in "a" mode —
+    # opening in append mode creates the file if it's missing, so
+    # checking existence after opening would always say True.
     file_exists = os.path.exists(filename)
 
     with open(filename, "a", newline="") as f:
@@ -171,6 +181,10 @@ def show_history(filename="history.csv"):
                 return
 
             for row in rows:
+                if None in (row['date'], row['mood'], row['energy'], row['genre']):
+                    print("Skipping a corrupted history row")
+                    continue
+
                 print(f"On {row['date']}: felt {row['mood']}, "
                       f"energy {row['energy']} \u2192 {row['genre']}")
     except FileNotFoundError:
@@ -186,23 +200,27 @@ def main():
     data = load_recommendations("data/recommendations.txt")
 
     while True:
-        mood = get_mood()
-        energy = get_energy()
-        result = get_recommendation(mood, energy, data)
-        display_recommendation(result)
+        try:
+            mood = get_mood()
+            energy = get_energy()
+            result = get_recommendation(mood, energy, data)
+            display_recommendation(result)
 
-        # Only log a session if a recommendation was actually found —
-        # otherwise there's no real genre to record.
-        if result is not None:
-            log_session(mood, energy, result["genre"])
+            # Only log a session if a recommendation was actually found —
+            # otherwise there's no real genre to record.
+            if result is not None:
+                log_session(mood, energy, result["genre"])
 
-        view_history = input("\nView past sessions? (y/n) ").strip().lower()
-        if view_history == "y":
-            show_history()
+            view_history = input("\nView past sessions? (y/n) ").strip().lower()
+            if view_history == "y":
+                show_history()
 
-        again = input("\nCheck another mood? (y/n) ").strip().lower()
-        if again != "y":
-            print("Take care!")
+            again = input("\nCheck another mood? (y/n) ").strip().lower()
+            if again != "y":
+                print("Take care!")
+                break
+        except KeyboardInterrupt:
+            print("\nGoodbye!")
             break
 
 
