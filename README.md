@@ -46,7 +46,19 @@
 
 ## Testing Summary
 
-Describe the major scenarios tested, including invalid input and file-related errors.
+- Valid input: confirmed valid moods and energy levels are accepted immediately at each prompt.
+
+- Invalid input: entering an unrecognized mood or energy level reprints the valid options and reprompts instead of crashing or accepting bad data.
+
+- Empty input: pressing Enter with no input reprompts correctly, since an empty string never matches the valid-options list.
+
+- Whitespace and casing: input like " HAPPY " is correctly normalized to "happy" via .strip().lower().
+
+- Unmatched mood/energy combination: tested a combo not present in recommendations.txt and confirmed display_recommendation() shows a "no recommendation found" message instead of crashing, and that no session gets logged to history.csv for that attempt. This testing also surfaced a UX issue — the program was still asking "View past sessions?" right after telling the user nothing was found, which felt like a non sequitur. Fixed by only offering the history prompt when a recommendation was actually found, alongside the existing log_session() call.
+
+- Missing recommendations file: temporarily renamed data/recommendations.txt and confirmed the program prints "Could not find recommendations file: ..." and continues running gracefully (every lookup returns None) rather than crashing.
+
+- Persistence across restarts: completed a session, closed the program entirely, restarted it, and confirmed history.csv still contained the earlier session alongside new ones — confirming data actually persists between separate runs rather than just within a single session.
 
 ## AI Use
 

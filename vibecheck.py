@@ -206,14 +206,16 @@ def main():
             result = get_recommendation(mood, energy, data)
             display_recommendation(result)
 
-            # Only log a session if a recommendation was actually found —
-            # otherwise there's no real genre to record.
+            # Only log a session and offer to view history if a
+            # recommendation was actually found — otherwise there's no
+            # real genre to record, and asking to view history right
+            # after a "not found" message feels like a non sequitur.
             if result is not None:
                 log_session(mood, energy, result["genre"])
 
-            view_history = input("\nView past sessions? (y/n) ").strip().lower()
-            if view_history == "y":
-                show_history()
+                view_history = input("\nView past sessions? (y/n) ").strip().lower()
+                if view_history == "y":
+                    show_history()
 
             again = input("\nCheck another mood? (y/n) ").strip().lower()
             if again != "y":
